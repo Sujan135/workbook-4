@@ -1,9 +1,9 @@
 package com.pluralsight;
 
 public class Reservation {
-    private String roomType;
-    private int numberOfNights;
-    private boolean isWeekend;
+    private final String roomType;
+    private final int numberOfNights;
+    private final boolean isWeekend;
 
     public Reservation(String roomType, int numberOfNights, boolean isWeekend) {
         this.roomType = roomType;
@@ -15,33 +15,31 @@ public class Reservation {
         return roomType;
     }
 
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
-    }
-
     public int getNumberOfNights() {
         return numberOfNights;
-    }
-
-    public void setNumberOfNights(int numberOfNights) {
-        this.numberOfNights = numberOfNights;
     }
 
     public boolean isWeekend() {
         return isWeekend;
     }
 
-    public void setWeekend(boolean weekend) {
-        isWeekend = weekend;
-    }
-
     public double getPrice() {
-        double price = roomType.equalsIgnoreCase("king") ? 139.00 : 124.00;
+        double price = 0.00;
+
+        if (roomType!= null) {
+            if (roomType.equalsIgnoreCase("king")) {
+                price = 139.00;
+            } else if (roomType.equalsIgnoreCase("double")) {
+                price = 124.00;
+            } else {
+                System.out.println("Invalid room name:");
+            }
+        }
+
         if (isWeekend) {
             price *= 1.10;
         }
         return price;
-
     }
 
     public double getReservationTotal() {

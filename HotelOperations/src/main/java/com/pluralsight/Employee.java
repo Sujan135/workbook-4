@@ -4,8 +4,8 @@ public class Employee {
     private int employeeId;
     private String name;
     private String department;
-    private double payRate;
-    private double hoursWorked;
+    private final double payRate;
+    private final double hoursWorked;
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
