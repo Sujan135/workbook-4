@@ -36,7 +36,7 @@ public class Reservation {
     }
 
     public double getPrice() {
-        double price = roomType.equalsIgnoreCase("king") ? 139.0 : 124.0;
+        double price = roomType.equalsIgnoreCase("king") ? 139.00 : 124.00;
         if (isWeekend) {
             price *= 1.10;
         }
