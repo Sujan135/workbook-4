@@ -45,29 +45,47 @@ public class Employee {
         return regularPay + overtimePay;
     }
 
-    public void punchIn(double time) {
+    public void punchTimeCard(double time) {
         if (!punchedIn) {
-            punchInTime =time;
+            punchInTime = time;
             punchedIn = true;
-            System.out.println(name + " punched in at " + time);
+            System.out.println(name + " punched in at " + time + " hours");
         } else {
-            System.out.println(name + " is already punched in.");
-        }
-    }
-
-    public void punchOut(double time){
-        if (punchedIn) {
-            double workedTime = time -punchInTime;
+            double workedTime = time - punchInTime;
             if (workedTime < 0) {
-                System.out.println("Invalid punch out time");
+                System.out.println("Invalid punch out time: Punch out cannot be before punch in.");
                 return;
             }
             hoursWorked += workedTime;
-            punchedIn =false;
+            punchedIn = false;
             System.out.println(name + " punched out at " + time + " hours, worked " + workedTime + "hours.");
-        } else {
-            System.out.println(name + "must punch in ...");
+
         }
+
     }
+//    public void punchIn(double time) {
+//        if (!punchedIn) {
+//            punchInTime =time;
+//            punchedIn = true;
+//            System.out.println(name + " punched in at " + time);
+//        } else {
+//            System.out.println(name + " is already punched in.");
+//        }
+//    }
+//
+//    public void punchOut(double time){
+//        if (punchedIn) {
+//            double workedTime = time -punchInTime;
+//            if (workedTime < 0) {
+//                System.out.println("Invalid punch out time");
+//                return;
+//            }
+//            hoursWorked += workedTime;
+//            punchedIn =false;
+//            System.out.println(name + " punched out at " + time + " hours, worked " + workedTime + "hours.");
+//        } else {
+//            System.out.println(name + "must punch in ...");
+//        }
+//    }
 
 }

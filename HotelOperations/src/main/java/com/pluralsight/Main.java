@@ -15,11 +15,13 @@ public class Main {
 
         Employee employee = new Employee(1, "Sujan Banjara", "Front Office", 20.0, 50);
 
-        employee.punchIn(10.0);
+        employee.punchTimeCard(10.0);
 
-        employee.punchOut(12.5);
+        employee.punchTimeCard(12.5);
 
-        employee.punchIn(14.75);
+        employee.punchTimeCard(14.75);
+
+        employee.punchTimeCard(9.0);
 
         System.out.println("Employee Total Pay: $" + employee.getTotalPay());
 
