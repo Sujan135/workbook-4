@@ -4,8 +4,11 @@ public class Employee {
     private int employeeId;
     private String name;
     private String department;
-    private final double payRate;
-    private final double hoursWorked;
+    private double payRate;
+    private double hoursWorked;
+
+    private double punchInTime;
+    private boolean punchedIn;
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -13,6 +16,7 @@ public class Employee {
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
+        this.punchedIn =false;
     }
 
     public double getHoursWorked() {
@@ -38,7 +42,32 @@ public class Employee {
     public double getTotalPay() {
         double regularPay = getRegularHours() * payRate;
         double overtimePay = getOvertimeHours() * payRate * 1.5;
-        double totalPay = regularPay + overtimePay;
-        return totalPay;
+        return regularPay + overtimePay;
     }
+
+    public void punchIn(double time) {
+        if (!punchedIn) {
+            punchInTime =time;
+            punchedIn = true;
+            System.out.println(name + "punched in at " + time);
+        } else {
+            System.out.println(name + " is already punched in.");
+        }
+    }
+
+    public void punchOut(double time){
+        if (punchedIn) {
+            double workedTime = time -punchInTime;
+            if (workedTime < 0) {
+                System.out.println("Invalid punch out time");
+                return;
+            }
+            hoursWorked += workedTime;
+            punchedIn =false;
+            System.out.println(name + " punched out at " + time + " worked " + workedTime + "hours.");
+        } else {
+            System.out.println(name + "must punch in ...");
+        }
+    }
+
 }
