@@ -49,7 +49,7 @@ public class Employee {
         if (!punchedIn) {
             punchInTime =time;
             punchedIn = true;
-            System.out.println(name + "punched in at " + time);
+            System.out.println(name + " punched in at " + time);
         } else {
             System.out.println(name + " is already punched in.");
         }
@@ -64,7 +64,7 @@ public class Employee {
             }
             hoursWorked += workedTime;
             punchedIn =false;
-            System.out.println(name + " punched out at " + time + " worked " + workedTime + "hours.");
+            System.out.println(name + " punched out at " + time + " hours, worked " + workedTime + "hours.");
         } else {
             System.out.println(name + "must punch in ...");
         }
