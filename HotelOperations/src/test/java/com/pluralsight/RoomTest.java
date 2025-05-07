@@ -20,4 +20,16 @@ class RoomTest {
         assertTrue(room.isDirty());
     }
 
+    @Test
+    void checkOut_SetOccupiedFalse() {
+        // arrange
+        Room room = new Room(2, 100.0);
+
+        // act
+        room.checkOut();
+
+        // assert
+        assertFalse(room.isOccupied());
+    }
+
 }
