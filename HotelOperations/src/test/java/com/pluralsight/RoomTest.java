@@ -32,4 +32,18 @@ class RoomTest {
         assertFalse(room.isOccupied());
     }
 
+    @Test
+    void cleanRoom_SetDirtyFalseIfRoomUnoccupiedAndDirty() {
+        // arrange
+        Room room = new Room(2, 100.0);
+        room.checkIn();
+        room.checkOut();
+
+        // act
+        room.cleanRoom();
+
+        // assert
+        assertFalse(room.isDirty());
+    }
+
 }
