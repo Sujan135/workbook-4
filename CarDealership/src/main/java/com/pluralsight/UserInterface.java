@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class UserInterface {
     private Dealership dealership;
 
+    public void setDealership(Dealership dealership) {
+        this.dealership = dealership;
+    }
+
     public void display() {
         init();
 
@@ -25,8 +29,7 @@ public class UserInterface {
                     break;
                 case 4:
                     System.out.println("Exiting..");
-                    scanner.close();
-                    break;
+                    return;
                 default:
                     System.out.println("Invalid command. Try again.");
                     break;
