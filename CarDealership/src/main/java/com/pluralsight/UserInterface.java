@@ -42,7 +42,6 @@ public class UserInterface {
         dealership = fileManager.getDealerShip();
     }
 
-
     private void displayMenu() {
         System.out.println("-- Dealership Menu --");
         System.out.println("1. View all vehicles");

@@ -18,6 +18,5 @@ public class Program {
 
         userInterface.display();
 
-
     }
 }
