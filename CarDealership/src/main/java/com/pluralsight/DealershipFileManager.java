@@ -10,6 +10,7 @@ public class DealershipFileManager {
 
     public Dealership getDealerShip() {
         Dealership dealership = null;
+//        Dealership dealership = getDealerShip();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String dealershipInfo;

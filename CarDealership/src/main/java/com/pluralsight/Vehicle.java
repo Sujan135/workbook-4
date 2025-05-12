@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 public class Vehicle {
-    private String vin;
+    private int vin;
     private int year;
     private String make;
     private String model;
@@ -10,7 +10,7 @@ public class Vehicle {
     private long odometer;
     private double price;
 
-    public Vehicle(String vin, int year, String make, String model, String type, String color, long odometer, double price) {
+    public Vehicle(int vin, int year, String make, String model, String type, String color, long odometer, double price) {
         this.vin = vin;
         this.year = year;
         this.make = make;
@@ -21,11 +21,11 @@ public class Vehicle {
         this.price = price;
     }
 
-    public String getVin() {
+    public int getVin() {
         return vin;
     }
 
-    public void setVin(String vin) {
+    public void setVin(int vin) {
         this.vin = vin;
     }
 

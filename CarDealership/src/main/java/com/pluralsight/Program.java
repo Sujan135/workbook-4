@@ -17,6 +17,5 @@ public class Program {
         userInterface.setDealership(dealership);
 
         userInterface.display();
-
     }
 }
